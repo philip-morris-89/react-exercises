@@ -1,4 +1,5 @@
-// Extract the -What a beautiful day!- message into a new component called Message and render it within the Hello component.
+// What happens if no name prop is passed to the Welcome component?
+// Can you set a default value for the name prop?
 
 import ReactDOM from 'react-dom'
 import { App } from './App'
