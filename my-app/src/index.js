@@ -1,5 +1,6 @@
-// What happens if no name prop is passed to the Welcome component?
-// Can you set a default value for the name prop?
+// Modify the Welcome component so that it receives a second prop called age
+// and renders it below the -welcome- message,
+// within a p tag after the message -Your age is -.
 
 import ReactDOM from 'react-dom'
 import { App } from './App'
