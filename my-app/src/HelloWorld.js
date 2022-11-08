@@ -1,8 +1,14 @@
 import React from 'react'
 
-class HelloWorld extends React.Component {
+//Write a class component called App that renders the Hello component within a div tag.
+
+class App extends React.Component {
   render() {
-    return <h1>Hello, World!</h1>
+    return (
+      <div>
+        <HelloWorld />
+      </div>
+    )
   }
 }
 
