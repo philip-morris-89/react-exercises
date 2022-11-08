@@ -1,9 +1,8 @@
-// Create a new index.js file within the src folder and render the App component using the ReactDOM.render method.
+// Modify the Hello component so that it shows a p tag below the h1 tag with the message What a beautiful day!.
 
 import ReactDOM from 'react-dom'
 import { App } from './App'
 
-const helloWorldApp = <App />
 const root = document.querySelector('#root')
 
-ReactDOM.render(helloWorldApp, root)
+ReactDOM.render(<App />, root)
