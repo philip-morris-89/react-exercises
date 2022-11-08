@@ -1,19 +1,16 @@
 import React from 'react';
+import Hello from './Hello';
+import Age from './Age';
 
 class Welcome extends React.Component {
   render() {
     return (
       <div>
-        <p>Hello, {this.props.name}!</p>
-        <p>Your age is: {this.props.age}!</p>
+        <Hello name={this.props.name} />
+        <Age age={this.props.age} />
       </div>
     )
   }
-}
-
-Welcome.defaultProps = {
-  name: "There",
-  age: "Unkown"
 }
 
 export default Welcome
