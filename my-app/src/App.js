@@ -1,11 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 
-const hello = 'Hello, World!!';
+const sayHello = (name) => <h1>Hello, {name} !</h1>;
+
+// function sayHello(name) {
+//   return <h1>Hello, {name} !</h1>
+// }
 
 function App() {
   return (
-    <h1>{hello}</h1>
+    sayHello('John')
   );
 }
 
