@@ -2,12 +2,13 @@ import React from "react";
 
 class Hello extends React.Component {
   render() {
-    return <h1>Hello, {this.props.name}</h1>
+    return (
+      <div>
+        { this.props.name && <h1>Hello, {this.props.name}</h1>}
+        { !this.props.name && <h1>Hello, World!</h1>}
+      </div>
+    )
   }
-}
-
-Hello.defaultProps = {
-  name: "There"
 }
 
 export default Hello;
