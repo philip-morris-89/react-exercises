@@ -4,7 +4,7 @@ class Age extends React.Component {
   render() {
     return (
       <div>
-        {!!this.props.age && <h2>Your age is: {this.props.age}</h2>}
+        {this.props.age >= 18 && this.props.age <= 65 && <h2>Your are {this.props.age} years old</h2>}
       </div>
     )
   }
