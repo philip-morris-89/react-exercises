@@ -1,10 +1,11 @@
-// Extract the -Your age is- message into a new component called Age and
-// render it within the Welcome component.
-// Pass to the Age component the age prop that Welcome is receiving from the App component.
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { App } from './App';
 
-import ReactDOM from 'react-dom'
-import { App } from './App'
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const root = document.querySelector('#root')
-
-ReactDOM.render(<App />, root)
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
