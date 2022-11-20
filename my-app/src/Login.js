@@ -6,6 +6,7 @@ class Login extends React.Component {
     password: '',
     remember: false,
     loginDisabled: true,
+    resetDisabled: true,
   }
 
   handleInputChange = (event) => {
@@ -17,8 +18,9 @@ class Login extends React.Component {
 
     this.setState({
       [name]: type === 'checkbox' ? checked : value,
-      [name]: type === 'submit' ? disabled : value,
+      // [name]: type === 'submit' ? disabled : value,
       loginDisabled: (this.state.username && this.state.password) === '' ? true : false,
+      resetDisabled: value === '' ? true : false,
     })
   }
 
@@ -27,6 +29,14 @@ class Login extends React.Component {
       username: this.state.username,
       password: this.state.password,
       remember: this.state.remember,
+    })
+  }
+
+  clearForm = (event) => {
+    this.setState({
+      username: '',
+      password: '',
+      remember: false,
     })
   }
 
@@ -39,6 +49,7 @@ class Login extends React.Component {
           <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleInputChange} />
           <input type="checkbox" name="remember" checked={this.state.remember} onChange={this.handleInputChange} />
           <button type="submit" name="button" disabled={this.state.loginDisabled} onChange={this.handleInputChange} onClick={this.onLogin}>Login</button>
+          <button disabled={this.state.resetDisabled} onChange={this.handleInputChange} onClick={this.clearForm}>Reset</button>
         </form>
       </div>
     )
