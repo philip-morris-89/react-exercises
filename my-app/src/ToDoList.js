@@ -35,6 +35,12 @@ class ToDoList extends React.Component {
     })
   }
 
+  clearList = (event) => {
+    this.setState({
+      toDoItems: []
+    })
+  }
+
   render() {
     return (
       <div>
@@ -42,6 +48,7 @@ class ToDoList extends React.Component {
         <div>
           <input placeholder="Add item" value={this.state.newToDo} onChange={this.updateValue} />
           <button onClick={this.addItem}>Add</button>
+          <button onClick={this.clearList}>Clear list</button>
         </div>
         <ul>
           {this.state.toDoItems.map((item, index) =>
