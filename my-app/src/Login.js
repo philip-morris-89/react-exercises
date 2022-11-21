@@ -14,7 +14,7 @@ class Login extends React.Component {
     const name = event.target.name;
     const type = event.target.type;
     const checked = event.target.checked;
-    const disabled = event.target.disabled;
+    // const disabled = event.target.disabled;
 
     this.setState({
       [name]: type === 'checkbox' ? checked : value,
