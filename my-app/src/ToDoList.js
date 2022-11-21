@@ -41,6 +41,15 @@ class ToDoList extends React.Component {
     })
   }
 
+  removeItem = (todo) => {
+    console.log(todo);
+    const arr = this.state.toDoItems;
+    arr.splice(todo, 1);
+    this.setState({
+      arr
+    })
+  }
+
   render() {
     return (
       <div>
@@ -57,6 +66,7 @@ class ToDoList extends React.Component {
                 <input type="checkbox" checked={item.done} onChange={() => this.toggleDone(item)} />
                 {item.action}
               </label>
+              <button onClick={() => this.removeItem(index)}>Remove</button>
             </li>
           )}
         </ul>
