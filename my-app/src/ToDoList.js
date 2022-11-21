@@ -22,7 +22,8 @@ class ToDoList extends React.Component {
       toDoItems: [
         ...this.state.toDoItems,
         {action: this.state.newToDo, done: false},
-      ]
+      ],
+      newToDo: '',
     })
   }
 
