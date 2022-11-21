@@ -41,6 +41,15 @@ class Login extends React.Component {
   }
 
   render() {
+    const LoginButtonStyle = {
+      backgroundColor: this.state.password.length >= 8 ? 'green' : 'tomato',
+      color: 'white',
+      fontWeight: 'bold',
+      border: 'none',
+      padding: '8px 16px',
+      margin: '0 16px',
+    }
+
     return (
       <div>
         <h1>Login</h1>
@@ -48,7 +57,7 @@ class Login extends React.Component {
           <input type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.handleInputChange} />
           <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleInputChange} />
           <input type="checkbox" name="remember" checked={this.state.remember} onChange={this.handleInputChange} />
-          <button type="submit" name="button" disabled={this.state.loginDisabled} onChange={this.handleInputChange} onClick={this.onLogin}>Login</button>
+          <button style={LoginButtonStyle} type="submit" name="button" disabled={this.state.loginDisabled} onChange={this.handleInputChange} onClick={this.onLogin}>Login</button>
           <button disabled={this.state.resetDisabled} onChange={this.handleInputChange} onClick={this.clearForm}>Reset</button>
         </form>
       </div>
