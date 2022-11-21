@@ -1,0 +1,8 @@
+.welcome {
+  background-color:black;
+  border: 16px solid white;
+  outline: 1px solid black;
+  color: white;
+  font-family: 'Helvetica Neue';
+  padding: 32px;
+}
