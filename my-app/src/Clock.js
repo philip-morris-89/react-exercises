@@ -1,4 +1,14 @@
-import React from "react"
+import React from "react";
+import { LanguageContext } from "./LanguageContext";
+
+const Strings = {
+  en: {
+    CURRENT_TIME: "Current time is: "
+  },
+  it: {
+    CURRENT_TIME: "L'ora attuale è: "
+  },
+}
 
 class Clock extends React.Component {
   state = {
@@ -15,7 +25,17 @@ class Clock extends React.Component {
   }
 
   render() {
-    return <div>{this.state.date.toLocaleTimeString()}</div>
+    return (
+      <div>
+        <LanguageContext.Consumer>
+          {(language) => {
+            return (
+              <div>{Strings[language].CURRENT_TIME} {this.state.date.toLocaleTimeString()}</div>
+            )
+          }}
+        </LanguageContext.Consumer>
+      </div>
+    )
   }
 }
 
