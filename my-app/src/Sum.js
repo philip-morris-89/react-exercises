@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Sum({numbers}) {
+export function Sum({numbers=[1,2,3,4,5]}) {
 
   const initialValue = 0;
   const sumWithInitial = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);

@@ -9,7 +9,7 @@ export class App extends React.Component {
       <div>
         <Container title={<h1>My App</h1>}>
           <Welcome name="Filippo" />
-          <Sum numbers={[2,4,6,8,10]} />
+          <Sum />
         </Container>
       </div>
     )
