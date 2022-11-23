@@ -1,14 +1,10 @@
 import React from 'react';
-import Hello from './Hello';
 
-class Welcome extends React.Component {
-  render() {
-    return (
-      <div className="welcome">
-        <Hello name={this.props.name} />
-      </div>
-    )
-  }
+export function Welcome(props) {
+  return (
+    <div className="welcome">
+      { props.name && <h1>Hello, {props.name}</h1>}
+      { !props.name && <h1>Hello, World!</h1>}
+    </div>
+  )
 }
-
-export default Welcome
