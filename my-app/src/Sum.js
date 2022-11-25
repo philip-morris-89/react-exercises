@@ -7,7 +7,7 @@ export function Sum({numbers=[1,2,3,4,5]}) {
   
   return (
     <div>
-      <h1>{sumWithInitial}</h1>
+      <h1>Sum {numbers[0]} + {numbers[1]} + {numbers[2]} + {numbers[3]} + {numbers[4]}: {sumWithInitial}</h1>
     </div>
   )
 }

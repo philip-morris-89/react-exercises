@@ -1,68 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 
-class Login extends React.Component {
-  state = {
+export function Login() {
+
+  const [data, setData] = useState({
     username: '',
     password: '',
     remember: false,
-    loginDisabled: true,
-    resetDisabled: true,
-  }
+    loginDisabled: true
+  })
 
-  handleInputChange = (event) => {
-    const value = event.target.value;
-    const name = event.target.name;
-    const type = event.target.type;
-    const checked = event.target.checked;
-    // const disabled = event.target.disabled;
+  function handleInputChange(event) {
+    const { name, type, value, checked } = event.target;
 
-    this.setState({
-      [name]: type === 'checkbox' ? checked : value,
-      // [name]: type === 'submit' ? disabled : value,
-      loginDisabled: (this.state.username && this.state.password) === '' ? true : false,
-      resetDisabled: value === '' ? true : false,
+    setData((data) => {
+      return {
+        ...data,
+        [name]: type === 'checkbox' ? checked : value,
+        loginDisabled: (data.username && data.password) === '' ? true : false,
+      }
     })
   }
 
-  onLogin = (event) => {
-    this.setState({
-      username: this.state.username,
-      password: this.state.password,
-      remember: this.state.remember,
+  function onLogin(event) {
+    event.preventDefault();
+    setData({
+      ...data,
     })
   }
 
-  clearForm = (event) => {
-    this.setState({
-      username: '',
-      password: '',
-      remember: false,
-    })
-  }
+  console.log(data);
 
-  render() {
-    const LoginButtonStyle = {
-      backgroundColor: this.state.password.length >= 8 ? 'green' : 'tomato',
-      color: 'white',
-      fontWeight: 'bold',
-      border: 'none',
-      padding: '8px 16px',
-      margin: '0 16px',
-    }
-
-    return (
-      <div>
-        <h1>Login</h1>
-        <form>
-          <input type="text" name="username" placeholder="Username" value={this.state.username} onChange={this.handleInputChange} />
-          <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleInputChange} />
-          <input type="checkbox" name="remember" checked={this.state.remember} onChange={this.handleInputChange} />
-          <button style={LoginButtonStyle} type="submit" name="button" disabled={this.state.loginDisabled} onChange={this.handleInputChange} onClick={this.onLogin}>Login</button>
-          <button disabled={this.state.resetDisabled} onChange={this.handleInputChange} onClick={this.clearForm}>Reset</button>
-        </form>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h1>Login Form</h1>
+      <form>
+        <input onChange={handleInputChange} value={data.username} type="text" name="username" />
+        <input onChange={handleInputChange} value={data.password} type="password" name="password" />
+        <input onChange={handleInputChange} checked={data.remember} type="checkbox" name="remember" />
+        <button onChange={handleInputChange} onClick={onLogin} disabled={data.loginDisabled} name="button">Login</button>
+      </form>
+    </div>
+  )
 }
-
-export default Login;
