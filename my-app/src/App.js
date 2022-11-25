@@ -2,6 +2,7 @@ import React from 'react';
 import Container from './Container';
 import { Welcome } from './Welcome';
 import { Sum } from './Sum';
+import { ClickCounter } from './ClickCounter';
 
 export class App extends React.Component {
   render() {
@@ -10,6 +11,7 @@ export class App extends React.Component {
         <Container title={<h1>My App</h1>}>
           <Welcome name="Filippo" />
           <Sum />
+          <ClickCounter incrementBy={100} />
         </Container>
       </div>
     )
