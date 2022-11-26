@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export function ClickCounter ( {initialValue = 0, incrementBy = 1 }) {
+export function ClickCounter ( {initialValue = 0, incrementBy = 1} ) {
   const [counter, setCounter] = useState(initialValue);
 
+  function onCounterChange() {
+    console.log(`The counter is now: ${counter}`)
+  }
+
+  useEffect( onCounterChange, [counter]);
+
   function handleCounterIncrement() {
-    setCounter(c => c + incrementBy);
+    setCounter((c) => c + incrementBy);
   }
 
   function handleResetCounter() {
