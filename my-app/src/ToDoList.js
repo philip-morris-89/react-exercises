@@ -50,6 +50,10 @@ class ToDoList extends React.Component {
     })
   }
 
+  // 1. Estrarre funziona
+  // Passare funzione al genitore
+
+
   render() {
     return (
       <div>
@@ -59,17 +63,7 @@ class ToDoList extends React.Component {
           <button onClick={this.addItem}>Add</button>
           <button onClick={this.clearList}>Clear list</button>
         </div>
-        <ul>
-          {this.state.toDoItems.map((item, index) =>
-            <li key={index}>
-              <label>
-                <input type="checkbox" checked={item.done} onChange={() => this.toggleDone(item)} />
-                {item.action}
-              </label>
-              <button onClick={() => this.removeItem(index)}>Remove</button>
-            </li>
-          )}
-        </ul>
+        <ul>{this.props.render(this.state.toDoItems, this.removeItem)}</ul>
       </div>
     )
   }
