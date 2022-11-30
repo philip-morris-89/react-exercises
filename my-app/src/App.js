@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from './Container';
-import { GithubUserList } from './GithubUserList';
+import { HookCounter } from './HookCounter';
 
 
 export class App extends React.Component {
@@ -8,7 +8,7 @@ export class App extends React.Component {
     return (
       <div>
         <Container title={<h1>My App</h1>}>
-          <GithubUserList />
+          <HookCounter />
         </Container>
       </div>
     )

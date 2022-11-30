@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
-export function Counter({initialValue = 0}) {
-  const [counter, setCounter] = useState(initialValue);
+export function Counter() {
+  const [counter, setCounter] = useState(0);
 
   useEffect( () => {
     setInterval(() => {
       setCounter(() => counter + 1);
-    }, 1000)
+    }, 3000)
   }, [counter])
 
   // Mount and Unmount
