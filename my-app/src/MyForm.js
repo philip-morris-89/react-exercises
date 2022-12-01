@@ -4,7 +4,7 @@ export function MyForm() {
   const { username, password, remember, disabled, input, submit, reset, prefill } = useLogin()
   return (
     <div>
-      <h1>My Form:</h1>
+      <h1>Login:</h1>
       <form>
         <div>
           <input type="text" name="username" onChange={input} value={username} placeholder="Username" />

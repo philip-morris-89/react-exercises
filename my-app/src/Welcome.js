@@ -1,6 +1,7 @@
 import { DisplayLanguage } from './DisplayLanguage'
 import { LanguageContext } from "./LanguageContext"
 import { useContext } from "react"
+import { Link } from 'react-router-dom'
 
 const translation = {
   it: {
@@ -20,6 +21,7 @@ export function Welcome(props) {
       <DisplayLanguage />
       {props.name && <h1>{translation[language]["HELLO"]}, {props.name}!</h1>}
       {!props.name && <h1>{translation[language]["HELLO"]} {translation[language]["WORLD"]}!</h1>}
+      <Link to="/login">Login to the app</Link>
     </div>
   )
 }

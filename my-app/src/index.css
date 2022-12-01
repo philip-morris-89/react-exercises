@@ -23,3 +23,8 @@
   font-family: 'Helvetica Neue';
   padding: 2rem;
 }
+
+a {
+  color: magenta;
+  text-decoration: none;
+}
