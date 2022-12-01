@@ -28,3 +28,9 @@ a {
   color: magenta;
   text-decoration: none;
 }
+
+.navLink {
+  color: blue;
+  margin-right: 16px;
+  font-weight: bold;
+}

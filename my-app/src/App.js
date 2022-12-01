@@ -7,9 +7,11 @@ import Container from "./Container"
 export function App() {
   return (
     <Container title={<h1>My amazing app</h1>}>
-      <Link to="/">Home</Link>
-      <Link to="/login">Login</Link>
-      <Link to="/counter">Counter</Link>
+      <Link to="/" className="navLink">Home</Link>
+      <Link to="/login" className="navLink">Login</Link>
+      <Link to="/counter" className="navLink">Counter</Link>
+      <br/>
+      <br/>
       <Routes>
         <Route path="/" element={<Welcome name="Filippo" />} />
         <Route path="/login" element={<MyForm />} />
