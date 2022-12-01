@@ -18,8 +18,6 @@ export function Welcome(props) {
   return (
     <div className="welcome">
       <DisplayLanguage />
-      {/* { props.name && <h1>Hello, {props.name}</h1>}
-      { !props.name && <h1>Hello, World!</h1>} */}
       {props.name && <h1>{translation[language]["HELLO"]}, {props.name}!</h1>}
       {!props.name && <h1>{translation[language]["HELLO"]} {translation[language]["WORLD"]}!</h1>}
     </div>

@@ -1,32 +1,13 @@
-import { useState } from 'react'
-import { Clock } from './Clock'
-import Container from './Container'
-// import DisplayLanguage from './DisplayLanguage'
-import { LanguageContext } from "./LanguageContext"
+import { Route, Routes } from "react-router-dom"
 import { Welcome } from './Welcome'
-
+import Container from "./Container"
 
 export function App() {
-  const [language, setLanguage] = useState('en')
-
-  function handleChangeLanguage(event) {
-    setLanguage(event.target.value)
-  }
-
   return (
-    <div>
-      <LanguageContext.Provider value={language}>
-        <Container title={<h1>My App</h1>}>
-          <select value={language} onChange={handleChangeLanguage}>
-            <option value="en">English</option>
-            <option value="it">Italian</option>
-          </select>
-          <br/>
-          <br/>
-          <Welcome name="Filippo" />
-          <Clock />
-        </Container>
-      </LanguageContext.Provider>
-    </div>
+    <Container title={<h1>My amazing app</h1>}>
+      <Routes>
+        <Route path="/" element={<Welcome name="Filippo" />} />
+      </Routes>
+    </Container>
   )
 }
