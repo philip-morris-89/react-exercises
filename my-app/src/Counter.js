@@ -6,7 +6,7 @@ export function Counter() {
   useEffect( () => {
     setInterval(() => {
       setCounter(() => counter + 1);
-    }, 3000)
+    }, 1000)
   }, [counter])
 
   // Mount and Unmount
