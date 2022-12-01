@@ -1,12 +1,12 @@
 import Container from './Container';
-import DisplayLanguage from './DisplayLanguage';
+import { HookCounter } from './HookCounter';
 
 
 export function App() {
     return (
       <div>
         <Container title={<h1>My App</h1>}>
-          <DisplayLanguage />
+          <HookCounter initialValue={50} />
         </Container>
       </div>
     )
