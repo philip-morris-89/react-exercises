@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from './Container';
-import { HookCounter } from './HookCounter';
+import { MyForm } from './MyForm';
 
 
 export class App extends React.Component {
@@ -8,7 +8,7 @@ export class App extends React.Component {
     return (
       <div>
         <Container title={<h1>My App</h1>}>
-          <HookCounter />
+          <MyForm />
         </Container>
       </div>
     )

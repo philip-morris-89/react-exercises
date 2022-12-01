@@ -1,61 +1,29 @@
-import React from "react";
+import { useLogin } from "./useLogin";
 
-class MyForm extends React.Component {
-  state = {
-    username: '',
-    password: '',
-    remember: false,
-  }
-
-  handleInputChange = (event) => {
-    const value = event.target.value;
-    const name = event.target.name;
-    const type = event.target.type;
-    const checked = event.target.checked;
-
-    this.setState({
-      [name]: type === 'checkbox' ? checked : value,
-    })
-  }
-
-  handleButtonReset = (event) => {
-    this.setState({
-      username: '',
-      password: '',
-      remember: false,
-    })
-  }
-
-  handleButtonPrefill = (event) => {
-    this.setState({
-      username: 'Filippo',
-      password: 'hello123',
-      remember: true
-    })
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    console.log(this.state);
-  }
-
-
-
-  render() {
-    return (
-      <div>
-        <h1>My Form:</h1>
+export function MyForm() {
+  const { username, password, remember, disabled, input, submit, reset, prefill } = useLogin()
+  return (
+    <div>
+      <h1>My Form:</h1>
+      <form>
         <div>
-          <input type="text" name="username" value={this.state.username} onChange={this.handleInputChange} />
-          <input type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
-          <input type="checkbox" name="remember" checked={this.state.remember} onChange={this.handleInputChange}/>
+          <input type="text" name="username" onChange={input} value={username} placeholder="Username" />
+          <br/>
+          <br/>
+          <input type="password" name="password" onChange={input} value={password} placeholder="Password" />
+          <br/>
+          <br/>
+          <label><input type="checkbox" name="remember" onChange={input} checked={remember} /> Remember password</label>
         </div>
+        <br/>
         <div>
-          <button onClick={this.handleButtonReset}>Reset form</button>
-          <button onClick={this.handleButtonPrefill}>Prefill form</button>
+          <button onClick={submit} disabled={disabled}>Login</button>
+          <br/>
+          <button onClick={reset}>Reset form</button>
+          <br/>
+          <button onClick={prefill}>Prefill form</button>
         </div>
-      </div>
-    )
-  }
+      </form>
+    </div>
+  )
 }
-
-export default MyForm;
