@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from './Container';
-import { MyForm } from './MyForm';
+import { GithubUser } from './GithubUser';
+import { GithubUserList } from './GithubUserList';
 
 
 export class App extends React.Component {
@@ -8,7 +9,8 @@ export class App extends React.Component {
     return (
       <div>
         <Container title={<h1>My App</h1>}>
-          <MyForm />
+          <GithubUser username="philip-morris-89" />
+          <GithubUserList />
         </Container>
       </div>
     )

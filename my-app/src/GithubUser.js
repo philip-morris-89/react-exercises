@@ -1,32 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useGithubUser } from "./useGithubUser"
 
 export function GithubUser({ username }) {
-
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    setLoading(true)
-    setError(null)
-    fetch(`https://api.github.com/users/${username}`)
-      .then((response) => {
-        if(response.status !== 200) {
-          setError(new Error("User not found"))
-        }
-        return response.json()
-      })
-      .then((json) => {
-        setData(json)
-      })
-      .catch(error => {
-        setError(error)
-      })
-      .finally(() => {
-        setLoading(false)
-      })
-  }, [username])
-
+  const { data, loading, error } = useGithubUser(username)
   return (
     <div>
       {loading && <h1>Loading...</h1>}
@@ -34,6 +9,7 @@ export function GithubUser({ username }) {
       {data && <h1>Github user: {data.login}</h1>}
     </div>
   )
+}
 
   // ----------- Same example using async function -------------------------
 
@@ -56,4 +32,3 @@ export function GithubUser({ username }) {
   // useEffect(() => {
   //   fetchGutHubUser(username)
   // }, [username])
-}
