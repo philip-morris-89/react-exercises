@@ -1,7 +1,7 @@
 import { DisplayLanguage } from './DisplayLanguage'
 import { LanguageContext } from "./LanguageContext"
 import { useContext } from "react"
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const translation = {
   it: {
@@ -17,6 +17,7 @@ const translation = {
 export function Welcome(props) {
   const language = useContext(LanguageContext)
   const navigate = useNavigate()
+  const { name = "World"} = useParams()
 
   function handleLoginButtonClick() {
     navigate('/login')
@@ -25,8 +26,9 @@ export function Welcome(props) {
   return (
     <div className="welcome">
       <DisplayLanguage />
-      {props.name && <h1>{translation[language]["HELLO"]}, {props.name}!</h1>}
-      {!props.name && <h1>{translation[language]["HELLO"]} {translation[language]["WORLD"]}!</h1>}
+      <h1>{translation[language]["HELLO"]}, {name}!</h1>
+      {/* {name && <h1>{translation[language]["HELLO"]}, {name}!</h1>} */}
+      {/* {!name && <h1>{translation[language]["HELLO"]} {translation[language]["WORLD"]}!</h1>} */}
       <button onClick={handleLoginButtonClick}>Enter the app</button>
     </div>
   )
