@@ -1,10 +1,27 @@
-import React from 'react';
+import { DisplayLanguage } from './DisplayLanguage'
+import { LanguageContext } from "./LanguageContext"
+import { useContext } from "react"
+
+const translation = {
+  it: {
+    "HELLO": "Ciao",
+    "WORLD": "a tutti"
+  },
+  en: {
+    "HELLO": "Hello",
+    "WORLD": "World"
+  }
+}
 
 export function Welcome(props) {
+  const language = useContext(LanguageContext)
   return (
     <div className="welcome">
-      { props.name && <h1>Hello, {props.name}</h1>}
-      { !props.name && <h1>Hello, World!</h1>}
+      <DisplayLanguage />
+      {/* { props.name && <h1>Hello, {props.name}</h1>}
+      { !props.name && <h1>Hello, World!</h1>} */}
+      {props.name && <h1>{translation[language]["HELLO"]}, {props.name}!</h1>}
+      {!props.name && <h1>{translation[language]["HELLO"]} {translation[language]["WORLD"]}!</h1>}
     </div>
   )
 }
