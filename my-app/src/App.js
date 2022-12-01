@@ -1,18 +1,20 @@
-import React from 'react';
+import {useState} from 'react';
 import Container from './Container';
 import { GithubUser } from './GithubUser';
-import { GithubUserList } from './GithubUserList';
 
 
-export class App extends React.Component {
-  render() {
+export function App() {
+  const [username, setUsername] = useState('')
+
     return (
       <div>
         <Container title={<h1>My App</h1>}>
-          <GithubUser username="philip-morris-89" />
-          <GithubUserList />
+          <h1>Fetch the data of Github user</h1>
+          <input placeholder='Enter Github user' value={username} onChange={(e) => setUsername(e.target.value)} />
+          <br/>
+          <br/>
+          <GithubUser username={username} />
         </Container>
       </div>
     )
-  }
 }
