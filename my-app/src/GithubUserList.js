@@ -33,26 +33,17 @@ export function GithubUserList() {
 
   return (
     <div>
-      {/* <form onSubmit={addUser}>
+      <form onSubmit={addUser}>
         <input name="users" value={data.input} placeholder="Add user" onChange={updateValue} />
         <button onClick={addUser}>Add user</button>
-      </form> */}
-      <h2>Users:</h2>
+      </form>
       <ul>
-        <li>
-          <Link to={`/users/${user1}`}>{user1}</Link>
-        </li>
-        <li>
-          <Link to={`/users/${user2}`}>{user2}</Link>
-        </li>
-      </ul>
-      {/* <ul>
         {data.users.map((user, index) =>
           <li key={index}>
-            <GithubUser username={user} />
+            <Link to={`/users/${user}`}>{user}</Link>
           </li>
         )}
-      </ul> */}
+      </ul>
 
       <Outlet />
     </div>
