@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function useGithubUser(username) {
   const [data, setData] = useState(null);
@@ -24,9 +24,9 @@ export function useGithubUser(username) {
     }
   }
 
-  // useEffect(() => {
-  //   fetchGutHubUser(username)
-  // }, [username])
+  useEffect(() => {
+    fetchGutHubUser(username)
+  }, [username])
 
   return { data, loading, error, onFetchUser: fetchGutHubUser}
 

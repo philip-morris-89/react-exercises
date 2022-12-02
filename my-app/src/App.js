@@ -4,6 +4,7 @@ import { Counter } from './Counter'
 import { MyForm } from './MyForm'
 import { Catalogue } from './Catalogue'
 import { Product } from './Product'
+import { ShowGithubUser } from './ShowGithubUser'
 import Container from "./Container"
 import { NotFound } from "./NotFound"
 
@@ -14,7 +15,8 @@ export function App() {
       <Link to="/login" className="navLink">Login</Link>
       <Link to="/counter" className="navLink">Counter</Link>
       <Link to="/products" className="navLink">Products</Link>
-      <Link to="/not/found" className="navLink">Not found</Link>
+      <Link to="/users" className="navLink">Users</Link>
+      <Link to="/notfound" className="navLink">Not found</Link>
       <br/>
       <br/>
       <Routes>
@@ -26,6 +28,9 @@ export function App() {
         <Route path="/products" element={<Catalogue />}>
           <Route index element={<p>Please select a product</p>} />
           <Route path=":id" element={<Product />} />
+        </Route>
+        <Route path="/users">
+          <Route path=":username" element={<ShowGithubUser />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
