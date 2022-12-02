@@ -28,7 +28,7 @@ export function GithubUserList() {
     console.log(data)
   }
 
-  const user1 = "Filippo____jsshshshss____ss";
+  const user1 = "Filippo";
   const user2 = "Andrea";
 
   return (
