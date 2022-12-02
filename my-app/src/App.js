@@ -16,7 +16,7 @@ export function App() {
       <Link to="/counter" className="navLink">Counter</Link>
       <Link to="/products" className="navLink">Products</Link>
       <Link to="/users" className="navLink">Users</Link>
-      <Link to="/notfound" className="navLink">Not found</Link>
+      <Link to="/not/found" className="navLink">Not found</Link>
       <br/>
       <br/>
       <Routes>
