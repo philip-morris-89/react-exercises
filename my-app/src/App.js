@@ -5,6 +5,7 @@ import { MyForm } from './MyForm'
 import { Catalogue } from './Catalogue'
 import { Product } from './Product'
 import { ShowGithubUser } from './ShowGithubUser'
+import {GithubUserList} from './GithubUserList'
 import Container from "./Container"
 import { NotFound } from "./NotFound"
 
@@ -29,9 +30,12 @@ export function App() {
           <Route index element={<p>Please select a product</p>} />
           <Route path=":id" element={<Product />} />
         </Route>
-        <Route path="/users">
+
+        <Route path="/users" element={<GithubUserList />}>
+          <Route index element={<p>Please select user</p>} />
           <Route path=":username" element={<ShowGithubUser />} />
         </Route>
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Container>
