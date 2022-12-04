@@ -10,6 +10,7 @@ import { NotFound } from "./NotFound"
 import { GithubUserList } from "./GithubUserList"
 import { GithubUser } from "./GithubUser"
 import { CardDetails } from "./CardDetails"
+import { FilteredList } from "./FilteredList"
 
 export function App() {
   return (
@@ -20,6 +21,7 @@ export function App() {
       <Link to="/products" className="navLink">Products</Link>
       <Link to="/users" className="navLink">Users</Link>
       <Link to="/cars" className="navLink">Cars</Link>
+      <Link to="/people" className="navLink">Filtered List</Link>
       <Link to="/not/found" className="navLink">Not found</Link>
       <br/>
       <br/>
@@ -33,6 +35,8 @@ export function App() {
           <Route index element={<p>Please select a product</p>} />
           <Route path=":id" element={<Product />} />
         </Route>
+
+        <Route path="/people" element={<FilteredList />} />
 
         <Route path="/cars" element={<CardDetails />} />
 
