@@ -8,6 +8,7 @@ import { ShowGithubUser } from './ShowGithubUser'
 import Container from "./Container"
 import { NotFound } from "./NotFound"
 import { GithubUserList } from "./GithubUserList"
+import { GithubUser } from "./GithubUser"
 
 export function App() {
   return (
@@ -31,10 +32,7 @@ export function App() {
           <Route path=":id" element={<Product />} />
         </Route>
 
-        <Route path="/users" element={<GithubUserList />}>
-          <Route index element={<p>Add a user and select it</p>} />
-          <Route path=":username" element={<ShowGithubUser />} />
-        </Route>
+        <Route path="/users" element={<GithubUser username="" />}/>
 
         <Route path="*" element={<NotFound />} />
       </Routes>
