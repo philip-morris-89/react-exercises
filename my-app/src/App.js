@@ -5,9 +5,9 @@ import { MyForm } from './MyForm'
 import { Catalogue } from './Catalogue'
 import { Product } from './Product'
 import { ShowGithubUser } from './ShowGithubUser'
-import {GithubUserList} from './GithubUserList'
 import Container from "./Container"
 import { NotFound } from "./NotFound"
+import { GithubUserList } from "./GithubUserList"
 
 export function App() {
   return (

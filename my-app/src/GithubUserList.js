@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import { Link, Outlet } from "react-router-dom"
-import { GithubUser } from "./GithubUser"
+// import { GithubUser } from "./GithubUser"
 
 export function GithubUserList() {
   const [data, setData] = useState({
@@ -27,9 +27,6 @@ export function GithubUserList() {
     })
     console.log(data)
   }
-
-  const user1 = "Filippo";
-  const user2 = "Andrea";
 
   return (
     <div>
