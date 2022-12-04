@@ -12,7 +12,7 @@ export function GithubUser({ username }) {
       {loading && <h1>Loading...</h1>}
       {error && <h1>There has been an error</h1>}
       {data && <h1>Github user: {data.login}</h1>}
-      <button onClick={refresh}>Refresh</button>
+      <button onClick={refresh}>Refresh users</button>
     </div>
   )
 }
